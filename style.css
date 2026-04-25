@@ -1,46 +1,100 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
-  font-family: Arial;
+  font-family: Arial, sans-serif;
   margin: 0;
-  background: #f5f5f5;
+  background: #f2f2f2;
+  color: #111;
 }
 
 header {
   background: #0b2545;
   color: white;
-  padding: 30px;
+  padding: 45px 20px;
   text-align: center;
 }
 
+header h1 {
+  margin: 0;
+  font-size: 42px;
+}
+
+header p {
+  font-size: 20px;
+}
+
 nav {
-  background: #133b5c;
+  background: #17476b;
   text-align: center;
-  padding: 10px;
+  padding: 15px;
 }
 
 nav a {
   color: white;
-  margin: 10px;
+  margin: 0 18px;
   text-decoration: none;
+  font-weight: bold;
 }
 
 main {
-  padding: 20px;
+  width: 90%;
+  max-width: 1000px;
+  margin: 30px auto;
 }
 
 .card {
   background: white;
-  padding: 20px;
-  margin: 15px 0;
-  border-radius: 10px;
+  padding: 30px;
+  margin-bottom: 25px;
+  border-radius: 12px;
+}
+
+h2 {
+  margin-top: 0;
 }
 
 button {
+  padding: 10px 18px;
   margin-top: 10px;
-  padding: 8px 12px;
+  margin-right: 8px;
+  cursor: pointer;
+  border: none;
+  background: #0b2545;
+  color: white;
+  border-radius: 6px;
+}
+
+button:hover {
+  background: #17476b;
+}
+
+input {
+  padding: 10px;
+  width: 260px;
+  max-width: 100%;
+  margin-top: 10px;
+}
+
+#output {
+  margin-top: 15px;
+  background: #eef3f8;
+  padding: 15px;
+  border-radius: 8px;
 }
 
 img {
   width: 100%;
-  max-width: 400px;
-  margin-top: 10px;
+  max-width: 500px;
+  display: block;
+  margin-top: 15px;
+  border-radius: 10px;
+}
+
+footer {
+  background: #0b2545;
+  color: white;
+  text-align: center;
+  padding: 18px;
 }
