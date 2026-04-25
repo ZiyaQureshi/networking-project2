@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <!-- Security: Content Security Policy -->
   <meta http-equiv="Content-Security-Policy"
-        content="default-src 'self'; script-src 'self' https://cdn.jsdelivr.net https://www.googletagmanager.com; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self' https://www.google-analytics.com;">
+        content="default-src 'self'; script-src 'self' https://cdn.jsdelivr.net https://www.googletagmanager.com; style-src 'self' 'unsafe-inline'; img-src 'self' data:;">
 
   <title>Secure Networking Website</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
 
+  <!-- Monitoring: Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -20,73 +22,69 @@
 </head>
 
 <body>
-  <header>
-    <h1>Secure Networking Website</h1>
-    <p>A project focused on website security, optimization, and monitoring.</p>
-  </header>
 
-  <nav>
-    <a href="#security">Security</a>
-    <a href="#performance">Performance</a>
-    <a href="#monitoring">Monitoring</a>
-    <a href="#contact">Contact</a>
-  </nav>
+<header>
+  <h1>Secure Networking Website</h1>
+  <p>Security, Performance, Deployment, and Monitoring</p>
+</header>
 
-  <main>
-    <section class="hero">
-      <h2>Building a Safer and Faster Website</h2>
-      <p>
-        This website demonstrates HTTPS deployment, input protection,
-        performance optimization, and traffic monitoring.
-      </p>
-      <button onclick="showMessage()">Learn More</button>
-      <p id="message"></p>
-    </section>
+<nav>
+  <a href="#security">Security</a>
+  <a href="#performance">Performance</a>
+  <a href="#monitoring">Monitoring</a>
+  <a href="#contact">Test</a>
+</nav>
 
-    <section id="security" class="card">
-      <h2>Security Enhancements</h2>
-      <ul>
-        <li>HTTPS is enabled automatically through GitHub Pages.</li>
-        <li>User input is sanitized to help prevent XSS attacks.</li>
-        <li>A Content Security Policy is added for extra browser protection.</li>
-      </ul>
-    </section>
+<main>
 
-    <section id="performance" class="card">
-      <h2>Performance Optimization</h2>
-      <ul>
-        <li>CSS and JavaScript files are separated for faster loading.</li>
-        <li>Images use lazy loading to improve page speed.</li>
-        <li>The design is lightweight and mobile-friendly.</li>
-      </ul>
+<section class="hero">
+  <h2>Networking Project</h2>
+  <button onclick="showMessage()">Click Me</button>
+  <p id="message"></p>
+</section>
 
-      <img src="images/network.jpg" alt="Network image" loading="lazy" class="sample-img">
-    </section>
+<section id="security" class="card">
+  <h2>Security</h2>
+  <ul>
+    <li>HTTPS enabled via GitHub Pages</li>
+    <li>Input sanitized using DOMPurify</li>
+    <li>Content Security Policy implemented</li>
+  </ul>
+</section>
 
-    <section id="monitoring" class="card">
-      <h2>Traffic Monitoring</h2>
-      <p>
-        Google Analytics can be connected to this website to monitor user visits,
-        traffic sources, and engagement.
-      </p>
-    </section>
+<section id="performance" class="card">
+  <h2>Performance</h2>
+  <ul>
+    <li>Lazy loading images</li>
+    <li>Optimized CSS & JS</li>
+  </ul>
 
-    <section id="contact" class="card">
-      <h2>Test Input Security</h2>
-      <p>Type a message below. The website will sanitize the input before displaying it.</p>
+  <img src="images/network.jpg" loading="lazy">
+</section>
 
-      <input type="text" id="userInput" placeholder="Enter your message">
-      <button onclick="submitInput()">Submit</button>
+<section id="monitoring" class="card">
+  <h2>Monitoring</h2>
+  <p>Google Analytics tracks traffic and behavior.</p>
+</section>
 
-      <div id="output"></div>
-    </section>
-  </main>
+<section id="contact" class="card">
+  <h2>Dynamic Data Storage</h2>
 
-  <footer>
-    <p>&copy; 2026 Secure Networking Project | GitHub Pages Deployment</p>
-  </footer>
+  <input type="text" id="userInput" placeholder="Enter message">
+  <button onclick="submitInput()">Submit</button>
+  <button onclick="clearMessages()">Clear</button>
 
-  <script src="https://cdn.jsdelivr.net/npm/dompurify@3.0.6/dist/purify.min.js"></script>
-  <script src="script.js"></script>
+  <div id="output"></div>
+</section>
+
+</main>
+
+<footer>
+  <p>Networking Project 2026</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/dompurify@3.0.6/dist/purify.min.js"></script>
+<script src="script.js"></script>
+
 </body>
 </html>
