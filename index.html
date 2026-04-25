@@ -1,1 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+  <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; script-src 'self' https://cdn.jsdelivr.net https://www.googletagmanager.com; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self' https://www.google-analytics.com;">
+
+  <title>Secure Networking Website</title>
+  <link rel="stylesheet" href="style.css" />
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag("js", new Date());
+    gtag("config", "G-XXXXXXXXXX");
+  </script>
+</head>
+
+<body>
+  <header>
+    <h1>Secure Networking Website</h1>
+    <p>A project focused on website security, optimization, and monitoring.</p>
+  </header>
+
+  <nav>
+    <a href="#security">Security</a>
+    <a href="#performance">Performance</a>
+    <a href="#monitoring">Monitoring</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <main>
+    <section class="hero">
+      <h2>Building a Safer and Faster Website</h2>
+      <p>
+        This website demonstrates HTTPS deployment, input protection,
+        performance optimization, and traffic monitoring.
+      </p>
+      <button onclick="showMessage()">Learn More</button>
+      <p id="message"></p>
+    </section>
+
+    <section id="security" class="card">
+      <h2>Security Enhancements</h2>
+      <ul>
+        <li>HTTPS is enabled automatically through GitHub Pages.</li>
+        <li>User input is sanitized to help prevent XSS attacks.</li>
+        <li>A Content Security Policy is added for extra browser protection.</li>
+      </ul>
+    </section>
+
+    <section id="performance" class="card">
+      <h2>Performance Optimization</h2>
+      <ul>
+        <li>CSS and JavaScript files are separated for faster loading.</li>
+        <li>Images use lazy loading to improve page speed.</li>
+        <li>The design is lightweight and mobile-friendly.</li>
+      </ul>
+
+      <img src="images/network.jpg" alt="Network image" loading="lazy" class="sample-img">
+    </section>
+
+    <section id="monitoring" class="card">
+      <h2>Traffic Monitoring</h2>
+      <p>
+        Google Analytics can be connected to this website to monitor user visits,
+        traffic sources, and engagement.
+      </p>
+    </section>
+
+    <section id="contact" class="card">
+      <h2>Test Input Security</h2>
+      <p>Type a message below. The website will sanitize the input before displaying it.</p>
+
+      <input type="text" id="userInput" placeholder="Enter your message">
+      <button onclick="submitInput()">Submit</button>
+
+      <div id="output"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Secure Networking Project | GitHub Pages Deployment</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/dompurify@3.0.6/dist/purify.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
