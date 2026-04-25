@@ -4,21 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Security: Content Security Policy -->
   <meta http-equiv="Content-Security-Policy"
-        content="default-src 'self'; script-src 'self' https://cdn.jsdelivr.net https://www.googletagmanager.com; style-src 'self' 'unsafe-inline'; img-src 'self' data:;">
+        content="default-src 'self'; script-src 'self' https://cdn.jsdelivr.net; style-src 'self'; img-src 'self' data:;">
 
   <title>Secure Networking Website</title>
   <link rel="stylesheet" href="style.css">
-
-  <!-- Monitoring: Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag("js", new Date());
-    gtag("config", "G-XXXXXXXXXX");
-  </script>
 </head>
 
 <body>
@@ -32,51 +22,55 @@
   <a href="#security">Security</a>
   <a href="#performance">Performance</a>
   <a href="#monitoring">Monitoring</a>
-  <a href="#contact">Test</a>
+  <a href="#storage">Storage Test</a>
 </nav>
 
 <main>
+  <section class="hero card">
+    <h2>Networking Project</h2>
+    <p>This website demonstrates security, optimization, deployment, monitoring, and data storage.</p>
+    <button id="learnBtn">Click Me</button>
+    <p id="message"></p>
+  </section>
 
-<section class="hero">
-  <h2>Networking Project</h2>
-  <button onclick="showMessage()">Click Me</button>
-  <p id="message"></p>
-</section>
+  <section id="security" class="card">
+    <h2>Security Enhancements</h2>
+    <ul>
+      <li>HTTPS enabled through GitHub Pages</li>
+      <li>Input sanitized using DOMPurify</li>
+      <li>Content Security Policy added</li>
+    </ul>
+  </section>
 
-<section id="security" class="card">
-  <h2>Security</h2>
-  <ul>
-    <li>HTTPS enabled via GitHub Pages</li>
-    <li>Input sanitized using DOMPurify</li>
-    <li>Content Security Policy implemented</li>
-  </ul>
-</section>
+  <section id="performance" class="card">
+    <h2>Performance Optimization</h2>
+    <ul>
+      <li>Image lazy loading</li>
+      <li>Separated HTML, CSS, and JavaScript files</li>
+      <li>Lightweight responsive design</li>
+    </ul>
 
-<section id="performance" class="card">
-  <h2>Performance</h2>
-  <ul>
-    <li>Lazy loading images</li>
-    <li>Optimized CSS & JS</li>
-  </ul>
+    <img src="images/network.jpg" alt="Networking project image" loading="lazy">
+  </section>
 
-  <img src="images/network.jpg" loading="lazy">
-</section>
+  <section id="monitoring" class="card">
+    <h2>Network Monitoring</h2>
+    <p>
+      This project is prepared for traffic monitoring using Google Analytics.
+      Website visits and user activity can be reviewed from the analytics dashboard.
+    </p>
+  </section>
 
-<section id="monitoring" class="card">
-  <h2>Monitoring</h2>
-  <p>Google Analytics tracks traffic and behavior.</p>
-</section>
+  <section id="storage" class="card">
+    <h2>Dynamic Data Storage</h2>
+    <p>Enter a message below. It will be sanitized and saved in your browser using LocalStorage.</p>
 
-<section id="contact" class="card">
-  <h2>Dynamic Data Storage</h2>
+    <input type="text" id="userInput" placeholder="Enter a message">
+    <button id="submitBtn">Submit</button>
+    <button id="clearBtn">Clear</button>
 
-  <input type="text" id="userInput" placeholder="Enter message">
-  <button onclick="submitInput()">Submit</button>
-  <button onclick="clearMessages()">Clear</button>
-
-  <div id="output"></div>
-</section>
-
+    <div id="output"></div>
+  </section>
 </main>
 
 <footer>
