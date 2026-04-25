@@ -1,22 +1,36 @@
+document.addEventListener("DOMContentLoaded", function () {
+  const learnBtn = document.getElementById("learnBtn");
+  const submitBtn = document.getElementById("submitBtn");
+  const clearBtn = document.getElementById("clearBtn");
+
+  learnBtn.addEventListener("click", showMessage);
+  submitBtn.addEventListener("click", submitInput);
+  clearBtn.addEventListener("click", clearMessages);
+
+  displayMessages();
+});
+
 function showMessage() {
   document.getElementById("message").textContent =
-    "Secure, optimized, and monitored website.";
+    "This website uses HTTPS, input sanitization, lazy loading, GitHub Pages deployment, and LocalStorage.";
 }
 
 function submitInput() {
-  const input = document.getElementById("userInput").value;
+  const inputBox = document.getElementById("userInput");
+  const input = inputBox.value;
+
   const cleanInput = DOMPurify.sanitize(input);
 
-  if (cleanInput.trim() === "") return;
+  if (cleanInput.trim() === "") {
+    document.getElementById("output").innerHTML = "Please enter a message first.";
+    return;
+  }
 
   let messages = JSON.parse(localStorage.getItem("messages")) || [];
-
   messages.push(cleanInput);
-
   localStorage.setItem("messages", JSON.stringify(messages));
 
-  document.getElementById("userInput").value = "";
-
+  inputBox.value = "";
   displayMessages();
 }
 
@@ -29,10 +43,10 @@ function displayMessages() {
     return;
   }
 
-  output.innerHTML = "<b>Stored Messages:</b><br>";
+  output.innerHTML = "<strong>Stored Messages:</strong><br><br>";
 
-  messages.forEach((msg, i) => {
-    output.innerHTML += (i + 1) + ". " + msg + "<br>";
+  messages.forEach(function (msg, index) {
+    output.innerHTML += `${index + 1}. ${DOMPurify.sanitize(msg)}<br>`;
   });
 }
 
@@ -40,5 +54,3 @@ function clearMessages() {
   localStorage.removeItem("messages");
   displayMessages();
 }
-
-window.onload = displayMessages;
